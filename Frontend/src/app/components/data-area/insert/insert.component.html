@@ -1,0 +1,23 @@
+<div>
+    <h2>Add Furniture</h2>
+
+    <form (submit)="send()">
+
+        <select [(ngModel)]="selectedCategoryId" name="categoryId">
+            <option disabled value="" selected>Select Category</option>
+            <option *ngFor="let c of categories" [ngValue]="c._id">{{ c.categoryName }}</option>
+        </select>
+
+        <label>size:</label>
+        <input type="text" name="size" [(ngModel)]="furniture.size">
+
+        <label>color:</label>
+        <input type="text" name="color" [(ngModel)]="furniture.color">
+
+        <label>price:</label>
+        <input type="number" name="price" [(ngModel)]="furniture.price">
+
+        <button>Add Furniture</button>
+    </form>
+
+</div>
